@@ -30,13 +30,17 @@ export function Navbar() {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     
-    // If we're not on the home page, navigate to home first
+    // Extract the section ID from the href
+    const sectionId = id.replace("#", "");
+    
+    // If we're not on the home page, navigate to home page with hash
     if (location !== "/") {
-      window.location.href = `/${id}`;
+      window.location.href = `/#${sectionId}`;
       return;
     }
     
-    const element = document.getElementById(id.replace("#", ""));
+    // If we're already on the home page, just scroll to the section
+    const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }

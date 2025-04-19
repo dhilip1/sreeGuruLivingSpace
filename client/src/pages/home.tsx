@@ -7,10 +7,14 @@ import { CoursesSection } from "@/components/home/courses-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { BookingSection } from "@/components/booking/booking-section";
 import { ContactSection } from "@/components/contact/contact-section";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/lib/constants";
+import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
 
 export default function Home() {
+  // Initialize the scroll-to-hash functionality
+  useScrollToHash();
+  
   return (
     <>
       <Helmet>
