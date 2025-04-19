@@ -4,7 +4,6 @@ import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-// Export default config
 export default defineConfig(async () => {
   return {
     plugins: [
@@ -23,9 +22,9 @@ export default defineConfig(async () => {
         "@assets": path.resolve(__dirname, "attached_assets"),
       },
     },
-    root: path.resolve(__dirname, "client"), // Still okay to use absolute for root
+    root: path.resolve(__dirname, "client"),
     build: {
-      outDir: "../dist", // ⚠️ relative to root ("client"), NOT absolute!
+      outDir: path.resolve(__dirname, "dist"), // ✅ Use absolute path
       emptyOutDir: true,
     },
   };
