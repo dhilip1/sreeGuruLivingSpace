@@ -6,16 +6,16 @@ import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  Form, 
-  FormControl, 
-  FormField, 
-  FormItem, 
-  FormLabel, 
-  FormMessage 
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
@@ -30,8 +30,8 @@ type FormValues = z.infer<typeof formSchema>;
 
 const getSocialIcon = (name: string) => {
   switch (name) {
-    case "Facebook":
-      return <FaFacebookF className="h-4 w-4" />;
+    case "Whatsapp":
+      return <FaWhatsapp className="h-4 w-4" />;
     case "Instagram":
       return <FaInstagram className="h-4 w-4" />;
     case "Twitter":
@@ -83,11 +83,16 @@ export function ContactSection() {
     <section id="contact" className="py-16 bg-primary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-accent font-medium tracking-widest uppercase text-sm">Get In Touch</span>
-          <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">Contact Us</h2>
+          <span className="text-yellow-900 font-bold tracking-widest uppercase text-lg">
+            Get In Touch
+          </span>
+          <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">
+            Contact Us
+          </h2>
           <div className="mt-4 max-w-3xl mx-auto">
             <p className="text-lg text-neutral-dark/80">
-              Have questions or need more information? We're here to help you on your journey to spiritual harmony.
+              Have questions or need more information? We're here to help you on
+              your journey to spiritual harmony.
             </p>
           </div>
         </div>
@@ -95,10 +100,15 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="p-8">
-              <h3 className="text-2xl font-bold text-neutral-dark mb-6">Send a Message</h3>
+              <h3 className="text-2xl font-bold text-neutral-dark mb-6">
+                Send a Message
+              </h3>
 
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
+                >
                   <FormField
                     control={form.control}
                     name="name"
@@ -155,8 +165,8 @@ export function ContactSection() {
                     )}
                   />
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full"
                     disabled={contactMutation.isPending}
                   >
@@ -170,7 +180,9 @@ export function ContactSection() {
           <div>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-neutral-dark mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-neutral-dark mb-6">
+                  Contact Information
+                </h3>
 
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -180,8 +192,12 @@ export function ContactSection() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg font-medium text-neutral-dark">Email</h4>
-                      <p className="mt-1 text-neutral-dark/70">{CONTACT_INFO.email}</p>
+                      <h4 className="text-lg font-medium text-neutral-dark">
+                        Email
+                      </h4>
+                      <p className="mt-1 text-neutral-dark/70">
+                        {CONTACT_INFO.email}
+                      </p>
                     </div>
                   </div>
 
@@ -192,8 +208,12 @@ export function ContactSection() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg font-medium text-neutral-dark">Phone</h4>
-                      <p className="mt-1 text-neutral-dark/70">{CONTACT_INFO.phone}</p>
+                      <h4 className="text-lg font-medium text-neutral-dark">
+                        Phone
+                      </h4>
+                      <p className="mt-1 text-neutral-dark/70">
+                        {CONTACT_INFO.phone}
+                      </p>
                     </div>
                   </div>
 
@@ -204,8 +224,12 @@ export function ContactSection() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg font-medium text-neutral-dark">Office Location</h4>
-                      <p className="mt-1 text-neutral-dark/70">{CONTACT_INFO.address}</p>
+                      <h4 className="text-lg font-medium text-neutral-dark">
+                        Office Location
+                      </h4>
+                      <p className="mt-1 text-neutral-dark/70">
+                        {CONTACT_INFO.address}
+                      </p>
                     </div>
                   </div>
 
@@ -216,9 +240,18 @@ export function ContactSection() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <h4 className="text-lg font-medium text-neutral-dark">Office Hours</h4>
+                      <h4 className="text-lg font-medium text-neutral-dark">
+                        Office Hours
+                      </h4>
                       {CONTACT_INFO.hours.map((hour, index) => (
-                        <p key={index} className={index === 0 ? "mt-1 text-neutral-dark/70" : "text-neutral-dark/70"}>
+                        <p
+                          key={index}
+                          className={
+                            index === 0
+                              ? "mt-1 text-neutral-dark/70"
+                              : "text-neutral-dark/70"
+                          }
+                        >
                           {hour}
                         </p>
                       ))}
@@ -230,7 +263,9 @@ export function ContactSection() {
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-neutral-dark mb-6">Follow Us</h3>
+                <h3 className="text-2xl font-bold text-neutral-dark mb-6">
+                  Follow Us
+                </h3>
 
                 <div className="flex space-x-4">
                   {SOCIAL_LINKS.map((social) => (

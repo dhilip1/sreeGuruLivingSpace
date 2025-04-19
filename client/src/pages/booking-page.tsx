@@ -19,7 +19,7 @@ export default function BookingPage() {
     <>
       <Helmet>
         <title>Book a Consultation - {SITE_TITLE}</title>
-        <meta name="description" content="Schedule your Vasthu Astrology consultation and begin your journey to spiritual harmony." />
+        <meta name="description" content="Schedule your Living Space Science consultation and begin your journey to build your dream home." />
       </Helmet>
       <Navbar />
       <main>
@@ -27,7 +27,7 @@ export default function BookingPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-neutral-dark">Book Your Consultation</h1>
             <p className="mt-4 text-lg text-neutral-dark/80 max-w-2xl mx-auto">
-              Schedule a session with our Vasthu Astrology experts and start your journey toward harmony and balance.
+              Schedule a session with our Living Space Science experts and start your journey toward harmony and balance.
             </p>
           </div>
         </div>

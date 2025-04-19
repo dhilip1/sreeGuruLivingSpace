@@ -15,21 +15,21 @@ import { useEffect } from "react";
 export default function Home() {
   // Initialize the scroll-to-hash functionality
   const { scrollToHash } = useScrollToHash();
-  
+
   useEffect(() => {
     // When the page loads, if there's a hash in the URL, scroll to that section
     if (window.location.hash) {
-      const sectionId = window.location.hash.replace('#', '');
+      const sectionId = window.location.hash.replace("#", "");
       setTimeout(() => {
         scrollToHash(sectionId);
       }, 500);
     }
   }, [scrollToHash]);
-  
+
   return (
     <>
       <Helmet>
-        <title>{SITE_TITLE} - Spiritual Harmony & Balance</title>
+        <title>{SITE_TITLE} - Build your dream Home in first attempt</title>
         <meta name="description" content={SITE_DESCRIPTION} />
       </Helmet>
       <Navbar />

@@ -36,7 +36,7 @@ export function ServicesSection() {
     <section id="services" className="py-16 bg-primary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-accent font-medium tracking-widest uppercase text-sm">
+          <span className="text-yellow-900 font-bold tracking-widest uppercase text-lg">
             What We Offer
           </span>
           <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">
@@ -94,7 +94,7 @@ export function ServicesSection() {
                 <Link href={`/booking?type=${service.type}`} className="w-full">
                   <Button
                     variant="outline"
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                    className="w-full border border-primary bg-transparent font-bold text-yellow-900 hover:bg-primary"
                   >
                     Book Now
                   </Button>

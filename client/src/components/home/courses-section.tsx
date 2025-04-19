@@ -75,7 +75,7 @@ export function CoursesSection() {
     <section id="courses" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-blue-600 font-medium tracking-widest uppercase text-sm">
+          <span className="text-yellow-900 font-bold tracking-widest uppercase text-lg">
             Educational Offerings
           </span>
           <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">
@@ -83,7 +83,7 @@ export function CoursesSection() {
           </h2>
           <div className="mt-4 max-w-3xl mx-auto">
             <p className="text-lg text-neutral-dark/80">
-              Expand your knowledge of Vasthu Astrology with our specialized
+              Expand your knowledge of Vasthu (aka. Living Space Science) with our specialized
               courses for all knowledge levels.
             </p>
           </div>
@@ -127,7 +127,7 @@ export function CoursesSection() {
                   <ul className="mt-2 space-y-2 text-sm text-neutral-dark/70">
                     {course.learnings.map((learning, index) => (
                       <li key={index} className="flex items-start">
-                        <CheckCircle  className="h-4 w-4 text-blue-600 mt-1 mr-2" />
+                        <CheckCircle className="h-4 w-4 text-blue-600 mt-1 mr-2" />
                         <span>{learning}</span>
                       </li>
                     ))}
@@ -145,16 +145,10 @@ export function CoursesSection() {
                   </div>
                   <Button
                     onClick={() => {
-                      form.setValue(
-                        "courseInterest",
-                        course.id === 1 ? "foundations" : "advanced",
+                      window.open(
+                        "https://www.eventbrite.com/e/unlock-the-secrets-of-living-space-science-vasthu-with-astrology-online-tickets-1331509132659",
+                        "_blank", // This opens the link in a new tab
                       );
-                      const element = document.getElementById(
-                        "course-inquiry-form",
-                      );
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
-                      }
                     }}
                     className="bg-blue-600 hover:bg-blue-700 text-white"
                   >

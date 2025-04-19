@@ -14,7 +14,7 @@ export default function ContactPage() {
     <>
       <Helmet>
         <title>Contact Us - {SITE_TITLE}</title>
-        <meta name="description" content="Get in touch with our Vasthu Astrology experts for questions, consultations, or more information." />
+        <meta name="description" content="Get in touch with our Living Space Science experts for questions, consultations, or more information." />
       </Helmet>
       <Navbar />
       <main>

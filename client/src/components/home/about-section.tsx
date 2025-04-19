@@ -21,11 +21,16 @@ export function AboutSection() {
     <section id="about" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-accent font-medium tracking-widest uppercase text-sm">Our Story</span>
-          <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">About Vasthu Astrology</h2>
+          <span className="text-accent font-bold tracking-widest uppercase text-lg">
+            Our Story
+          </span>
+          <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">
+            About Sree Guru Living Space Science
+          </h2>
           <div className="mt-4 max-w-3xl mx-auto">
             <p className="text-lg text-neutral-dark/80">
-              Discover the ancient wisdom that guides our practice and how we help clients achieve harmony.
+              Discover the ancient wisdom that guides our practice and how we
+              help clients achieve harmony.
             </p>
           </div>
         </div>
@@ -36,15 +41,21 @@ export function AboutSection() {
             <div className="absolute inset-0 bg-accent/10 rounded-xl rotate-3 transform"></div>
             <img
               className="relative rounded-lg shadow-lg w-full"
-              src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              src="https://ik.imagekit.io/sreeGuru/IMG20250131233724.jpg?updatedAt=1745079535824"
               alt="Vasthu Astrology symbols and elements"
             />
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-primary">Ancient Wisdom for Modern Lives</h3>
+            <h3 className="text-2xl font-bold text-primary">
+              Ancient Wisdom for Modern Lives
+            </h3>
             <p className="mt-4 text-lg text-neutral-dark/80">
-              Vasthu Astrology is an ancient architectural and directional science that addresses the relationship between humans and their living spaces. It integrates principles from astrology, architecture, and spiritual teachings to create environments that promote positive energy flow.
+              Sree Guru Living Space Science is an ancient architectural and
+              directional science that addresses the relationship between humans
+              and their living spaces. It integrates principles from astrology,
+              architecture, and spiritual teachings to create environments that
+              promote positive energy flow at our home.
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -56,15 +67,22 @@ export function AboutSection() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-neutral-dark">{feature.title}</h4>
-                    <p className="mt-2 text-neutral-dark/70">{feature.description}</p>
+                    <h4 className="text-lg font-semibold text-neutral-dark">
+                      {feature.title}
+                    </h4>
+                    <p className="mt-2 text-neutral-dark/70">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
             <div className="mt-8">
-              <a href="#services" className="inline-flex items-center text-accent hover:text-primary transition duration-300">
+              <a
+                href="#services"
+                className="inline-flex items-center text-accent hover:text-primary transition duration-300"
+              >
                 Learn more about our services
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

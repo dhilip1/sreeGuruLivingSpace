@@ -9,7 +9,7 @@ createRoot(document.getElementById("root")!).render(
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
-      <title>Vasthu Astrology - Spiritual Harmony & Balance</title>
+      <title>Sree Guru Living Space Science</title>
     </Helmet>
     <App />
   </HelmetProvider>
