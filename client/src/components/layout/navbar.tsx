@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, Moon } from "lucide-react";
 import { SITE_TITLE } from "@/lib/constants";
@@ -8,43 +8,66 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/#about" },
-  { name: "Services", href: "/#services" },
-  { name: "Courses", href: "/#courses" },
-  { name: "Testimonials", href: "/#testimonials" },
-  { name: "Contact", href: "/#contact" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Courses", href: "#courses" },
+  { name: "Testimonials", href: "#testimonials" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const { scrollToHash } = useScrollToHash();
 
   const isActive = (path: string) => {
     if (path === "/") return location === "/";
     return location.includes(path.replace("/", ""));
   };
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     
-    // Extract the section ID from the href
-    const sectionId = id.replace("#", "");
-    
-    // If we're not on the home page, navigate to home page with hash
-    if (location !== "/") {
-      window.location.href = `/#${sectionId}`;
+    // Handle navigation based on the link type
+    if (href === "/") {
+      window.location.href = "/";
       return;
     }
     
-    // If we're already on the home page, just scroll to the section
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (href.includes("#")) {
+      const sectionId = href.replace("/#", "").replace("#", "");
+      
+      // If we're not on the home page, navigate to home page first
+      if (location !== "/") {
+        // Set a session storage flag so we know to scroll after navigation
+        sessionStorage.setItem("scrollToSection", sectionId);
+        window.location.href = "/";
+        return;
+      }
+      
+      // We're on the home page, so just scroll to the section
+      scrollToHash(sectionId);
+    } else {
+      // Regular link, just navigate
+      window.location.href = href;
     }
   };
+  
+  // Check for a stored section to scroll to on page load
+  useEffect(() => {
+    const sectionToScrollTo = sessionStorage.getItem("scrollToSection");
+    if (sectionToScrollTo && location === "/") {
+      // Small delay to ensure the page is fully loaded
+      setTimeout(() => {
+        scrollToHash(sectionToScrollTo);
+        sessionStorage.removeItem("scrollToSection");
+      }, 800);
+    }
+  }, [location, scrollToHash]);
 
   return (
     <header className="sticky top-0 bg-white bg-opacity-90 shadow-md z-50">
@@ -83,10 +106,8 @@ export function Navbar() {
                           : "text-neutral-dark hover:bg-primary hover:bg-opacity-10 hover:text-primary"
                       }`}
                       onClick={(e) => {
-                        if (link.href.includes("#")) {
-                          scrollToSection(e, link.href);
-                          setIsOpen(false);
-                        }
+                        handleNavClick(e, link.href);
+                        setIsOpen(false);
                       }}
                     >
                       {link.name}
@@ -111,11 +132,7 @@ export function Navbar() {
                     ? "text-primary"
                     : "text-neutral-dark hover:text-primary transition duration-300"
                 }`}
-                onClick={(e) => {
-                  if (link.href.includes("#")) {
-                    scrollToSection(e, link.href);
-                  }
-                }}
+                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.name}
               </a>

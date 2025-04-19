@@ -10,10 +10,21 @@ import { ContactSection } from "@/components/contact/contact-section";
 import { Helmet } from "react-helmet-async";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/lib/constants";
 import { useScrollToHash } from "@/hooks/use-scroll-to-hash";
+import { useEffect } from "react";
 
 export default function Home() {
   // Initialize the scroll-to-hash functionality
-  useScrollToHash();
+  const { scrollToHash } = useScrollToHash();
+  
+  useEffect(() => {
+    // When the page loads, if there's a hash in the URL, scroll to that section
+    if (window.location.hash) {
+      const sectionId = window.location.hash.replace('#', '');
+      setTimeout(() => {
+        scrollToHash(sectionId);
+      }, 500);
+    }
+  }, [scrollToHash]);
   
   return (
     <>
@@ -23,12 +34,16 @@ export default function Home() {
       </Helmet>
       <Navbar />
       <main>
-        <HeroSection />
+        <div id="home">
+          <HeroSection />
+        </div>
         <AboutSection />
         <ServicesSection />
         <CoursesSection />
         <TestimonialsSection />
-        <BookingSection />
+        <div id="booking">
+          <BookingSection />
+        </div>
         <ContactSection />
       </main>
       <Footer />
