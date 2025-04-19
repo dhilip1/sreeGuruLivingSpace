@@ -32,6 +32,8 @@ export function Navbar() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     
+    console.log(`Nav clicked: ${href}`);
+    
     // Handle navigation based on the link type
     if (href === "/") {
       window.location.href = "/";
@@ -39,7 +41,9 @@ export function Navbar() {
     }
     
     if (href.includes("#")) {
-      const sectionId = href.replace("/#", "").replace("#", "");
+      // Extract just the ID part without the #
+      const sectionId = href.replace(/#/g, "");
+      console.log(`Scroll to section: ${sectionId}`);
       
       // If we're not on the home page, navigate to home page first
       if (location !== "/") {
@@ -49,8 +53,16 @@ export function Navbar() {
         return;
       }
       
-      // We're on the home page, so just scroll to the section
-      scrollToHash(sectionId);
+      // We're on the home page, so try to find and scroll to the section
+      const element = document.getElementById(sectionId);
+      console.log(`Found element?`, !!element);
+      
+      if (element) {
+        // Scroll directly to the element
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        console.error(`Could not find element with id: ${sectionId}`);
+      }
     } else {
       // Regular link, just navigate
       window.location.href = href;
