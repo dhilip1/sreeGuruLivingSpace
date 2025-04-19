@@ -129,9 +129,9 @@ export function BookingSection({ initialConsultationType }: BookingSectionProps)
                            "60 minutes | Virtual Only"}
                         </p>
                         <p className="mt-1 text-sm text-neutral-dark/70">
-                          {type.value === "residential" ? "Starting at $150" : 
-                           type.value === "commercial" ? "Starting at $250" : 
-                           "Starting at $100"}
+                          {type.value === "residential" ? "Starting at Rs.18999" : 
+                           type.value === "commercial" ? "Starting at Rs.23999" : 
+                           "Starting at Rs.1111"}
                         </p>
                       </div>
                     </div>

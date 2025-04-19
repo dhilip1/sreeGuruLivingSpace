@@ -12,10 +12,10 @@ export function HeroSection() {
               Spiritual Harmony & Balance
             </span>
             <h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-dark">
-              Discover Balance Through <span className="text-primary">Vasthu Astrology</span>
+              Discover Balance Through <span className="text-primary">Living Space Science & Astrology</span>
             </h1>
             <p className="mt-6 text-lg text-neutral-dark/80 max-w-2xl">
-              Unlock the ancient wisdom of Vasthu Astrology to bring harmony, prosperity and spiritual balance to your life and spaces. Our consultations and courses offer personalized guidance for your spiritual journey.
+              Unlock the ancient wisdom of Vasthu & Astrology to bring harmony, prosperity and spiritual balance to your life and spaces. Our consultations and courses offer personalized guidance for you to build the dream home at the first attempt! Home is something which is so much to our heart, any human will have the goal to build their own home.All of us run to earn and buy our home with our hard earned money without understanding this science !.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a href="#services" className="inline-flex">
@@ -24,7 +24,8 @@ export function HeroSection() {
                 </Button>
               </a>
               <Link href="/booking" className="inline-flex">
-                <Button size="lg" variant="outline" className="px-8 border-accent text-accent hover:bg-accent/10">
+                <Button size="lg" variant="outline" className="px-8 border-blue-600 text-blue-600 hover:bg-blue-600/10"
+>
                   Book Consultation
                 </Button>
               </Link>
@@ -35,7 +36,7 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-3xl opacity-30"></div>
               <img
                 className="relative rounded-lg shadow-xl w-full"
-                src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                src="https://ik.imagekit.io/sreeGuru/IMG_20240907_113300.jpg?updatedAt=1745079551213"
                 alt="Cosmos and astrology"
               />
             </div>

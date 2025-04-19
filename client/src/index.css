@@ -10,4 +10,48 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+  
+  :root {
+    --color-accent: 37 90% 50%;  /* Amber/golden accent that complements the primary yellow */
+    --color-secondary: 32 95% 44%;  /* A darker orange-yellow for secondary elements */
+    --color-neutral-dark: 210 20% 25%; /* Deep blue-gray for text */
+    --color-neutral-light: 210 20% 92%; /* Light gray with slight blue tint for borders */
+  }
+}
+
+/* Custom color classes */
+.text-accent {
+  color: hsl(var(--color-accent));
+}
+
+.bg-accent {
+  background-color: hsl(var(--color-accent));
+}
+
+.text-secondary {
+  color: hsl(var(--color-secondary));
+}
+
+.bg-secondary {
+  background-color: hsl(var(--color-secondary));
+}
+
+.text-neutral-dark {
+  color: hsl(var(--color-neutral-dark));
+}
+
+.bg-neutral-dark {
+  background-color: hsl(var(--color-neutral-dark));
+}
+
+.text-neutral-light {
+  color: hsl(var(--color-neutral-light));
+}
+
+.bg-neutral-light {
+  background-color: hsl(var(--color-neutral-light));
+}
+
+.border-neutral-light {
+  border-color: hsl(var(--color-neutral-light));
 }

@@ -1,90 +1,85 @@
-export const SITE_TITLE = "Vasthu Astrology";
-export const SITE_DESCRIPTION = "Spiritual Harmony & Balance through Vasthu Astrology";
+export const SITE_TITLE = "Sree Guru Living Space Science";
+export const SITE_DESCRIPTION = "Om Shreem Namah !  Welcome to Sree Guru Living Space Science, your trusted guide to harmonizing your living and working spaces with the ancient wisdom of Vasthu & Astrology.";
 
 export const SERVICES = [
   {
     id: 1,
     title: "Home & Property Consultation",
     description: "Comprehensive analysis of your living space to identify energy imbalances and provide solutions for a harmonious home.",
-    price: "Starting at $150",
+    price: "Starting at Rs.18999",
     type: "residential",
     features: ["Full property assessment", "Personalized remedies", "45-day follow-up support"],
-    imageUrl: "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+    imageUrl: "https://ik.imagekit.io/sreeGuru/IMG20240519122210.jpg?updatedAt=1745079568893"
   },
   {
     id: 2,
     title: "Business & Office Consultation",
     description: "Optimize your workspace for productivity, prosperity and positive team dynamics with Vasthu principles.",
-    price: "Starting at $250",
+    price: "Starting at Rs.23999",
     type: "commercial",
     features: ["Office layout analysis", "Prosperity enhancement", "60-day implementation support"],
-    imageUrl: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+    imageUrl: "https://ik.imagekit.io/sreeGuru/IMG20240915082223.jpg?updatedAt=1745079551218"
   },
   {
     id: 3,
     title: "Personal Astrology Reading",
     description: "In-depth analysis of your birth chart to understand your life path, challenges and opportunities for spiritual growth.",
-    price: "Starting at $100",
+    price: "Starting at Rs.1111",
     type: "personal",
     features: ["Comprehensive birth chart", "Personalized guidance", "Digital report included"],
-    imageUrl: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80"
+    imageUrl: "https://ik.imagekit.io/sreeGuru/IMG20240625231416.jpg?updatedAt=1745079560279"
   },
 ];
 
 export const COURSES = [
   {
     id: 1,
-    title: "Foundations of Vasthu Astrology",
-    description: "Learn the essential principles of Vasthu Astrology and how they can be applied to enhance harmony and well-being in daily life. Perfect for beginners seeking to understand this ancient wisdom.",
-    price: "$399",
-    duration: "8 Weeks",
-    hours: "16 Hours",
+    title: "Unlock the Secrets of Living Space Science ( Vasthu) with Astrology",
+    description: "This is not just a Vasthu class — it’s a deep-dive into the ancient Indian science of life energy surrounding us at home, combined with the wisdom of Astrology. Learn how your home’s design affects your life and how to identify and fix imbalances. Perfect for beginners seeking to understand this ancient wisdom & correct it by themselves as an expert",
+    price: "$299/INR 23,333",
+    duration: "8 Weekends",
+    hours: "12 Hours",
     level: "Beginner",
     learnings: [
-      "History and principles of Vasthu Astrology",
-      "The five elements and their significance",
-      "Basic space assessment techniques",
-      "Simple remedies for common spatial issues"
-    ]
-  },
-  {
-    id: 2,
-    title: "Advanced Vasthu Principles & Practices",
-    description: "Deepen your understanding of Vasthu Astrology with advanced concepts, detailed analysis techniques, and comprehensive remedial measures for complex spatial challenges.",
-    price: "$699",
-    duration: "12 Weeks",
-    hours: "24 Hours",
-    level: "Intermediate",
-    learnings: [
-      "Advanced directional influences and remedies",
-      "Connecting astrological charts with spatial design",
-      "Commercial and business space optimization",
-      "Client consultation methodology and ethics"
-    ]
-  }
+
+      "Vasthu + Astrology: Understand how planetary influences and spatial energy work together.",
+       "The five elements and their significance",
+
+     "Personalized Remedies: Get customized remedies for the home you register.",
+
+      "Lifetime Guidance: Ongoing support for any Vasthu-related queries for the same house — forever!"
+    ],
+    idealFor:[ 
+
+             "Those who want to learn this powerful science from scratch.",
+
+             "Anyone planning to build their dream home aligned with natural energies, Many have the dream to build homes this opportunity will make you to build right at first attempt itself! Trust me many would have realized this after building a home ~ I found this truth after i have bought 2 homes then i built the One ! There is a difference between bought & build ! Join and learn this Science !",
+
+             "People who want peace, prosperity, and harmony in their living space. Design your home to attract positive energy and create a serene environment for you and your family."] },
+  
 ];
 
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Kamal Babu",
     role: "Residential Client",
-    content: "After implementing the Vasthu changes recommended for my home, I've noticed such a positive shift in energy. My family feels more at peace, and we're sleeping better. The consultation was thorough and the suggestions were practical and easy to implement.",
+    content: "Sree Guru visited our home and he patiently listened all our thoughts, we were discussing few challenges or doubts in our mind post watching a vasthu video at youtube. He explained about other challenges in our home which is impacting our child studies and focus. That was out of the box and it was true we were able to realize it and made the changes he has mentioned in our pooja room. Truly its a science which he able to connect it thru his real life experience and learning from multiple Guru's. Thank you Sree ..",
     rating: 5
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "Business Owner",
-    content: "As a business owner, I was skeptical at first, but the office layout changes suggested by the Vasthu consultation have genuinely improved workplace dynamics and productivity. Our team is more collaborative, and client meetings feel more positive. Highly recommend!",
+    name: "Rajesh Chidambaram",
+    role: "Residential Client",
+    content: "Sree Guru help me to change my mind of altering my house ( suggested by another vasthu expert ) , he explained me in detail why the changes other expert mentioned will not work with complete details. He made me to understand the basics of this science and helped to see the way the science works. This is not some psuedo-science. A tree in my backyard also cause a imbalance ! Thank you Sree ..",
     rating: 5
   },
   {
     id: 3,
-    name: "Amanda Rodriguez",
-    role: "Course Student",
-    content: "The Foundation course was incredibly eye-opening! I now understand how my living space affects different aspects of my life. The instructor was knowledgeable and patient with all questions. I'm already applying what I learned and seeing positive changes.",
-    rating: 4.5
+    name: "Hamsalatha",
+    role: "Residential Client",
+    content: "We have conneccted with Sree Guru for our new home, i know little vasthu but just for a validation i connected with him to see his opinion on a property which we have finalized. Sree Guru helped us to see the multiple vasthu defects in the property which we thought was a perfect one ! God only saved us through him then he patiently helped to review multiple floor plans and able to found a perfect home. I validated that floor plan again with another expert , he also confirmed the house which he has suggested is perfect one ! Thank you Sree & he guided us right time to make the agreement, bank loan & even the Grahaprevesam day.. He is All-in-one and did things as it is like purchasing a home for him.",
+    rating: 5
   }
 ];
 
@@ -118,29 +113,27 @@ export const CONSULTATION_TYPES = [
 ];
 
 export const COURSE_INTEREST_OPTIONS = [
-  { label: "Foundations of Vasthu Astrology", value: "foundations" },
-  { label: "Advanced Vasthu Principles & Practices", value: "advanced" },
-  { label: "Interested in Both Courses", value: "both" }
+  { label: "Unlock the Secrets of Living Space Science ( Vasthu) with Astrology", value: "foundations" }
 ];
 
 export const TIME_SLOTS = [
-  "9:00 AM", "10:30 AM", "1:00 PM", "2:30 PM", "4:00 PM", "5:30 PM"
+  "9:00 PM IST",
+  "10:00 PM IST",
 ];
 
 export const SOCIAL_LINKS = [
-  { name: "Facebook", url: "#" },
-  { name: "Instagram", url: "#" },
-  { name: "Twitter", url: "#" },
-  { name: "YouTube", url: "#" }
+  { name: "Whatsapp", url: "https://whatsapp.com/channel/0029VaM4rCl4SpkKWnnABR0q" },
+  { name: "Instagram", url: "https://www.instagram.com/sreeguru.living.space.vasthu/" },
+  { name: "Twitter", url: "https://x.com/sreeGuruVasthu" },
+  { name: "YouTube", url: "https://www.youtube.com/@SreeGuruVasthu/videos" }
 ];
 
 export const CONTACT_INFO = {
-  email: "info@vasthuastrology.com",
-  phone: "+1 (555) 123-4567",
-  address: "123 Spiritual Way, Harmony Hills, CA 90210",
+  email: "sreeguruvasthu@gmail.com",
+  phone: "+91 6238999369",
+  address: "Thiruvanthapuram, Kerala",
   hours: [
-    "Monday - Friday: 9:00 AM - 6:00 PM",
-    "Saturday: 10:00 AM - 4:00 PM",
-    "Sunday: Closed"
+    "Monday - Sunday: 9:00 AM - 6:00 PM"
+   
   ]
 };

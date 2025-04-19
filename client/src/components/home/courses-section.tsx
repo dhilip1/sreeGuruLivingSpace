@@ -75,11 +75,16 @@ export function CoursesSection() {
     <section id="courses" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-accent font-medium tracking-widest uppercase text-sm">Educational Offerings</span>
-          <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">Our Courses</h2>
+          <span className="text-blue-600 font-medium tracking-widest uppercase text-sm">
+            Educational Offerings
+          </span>
+          <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">
+            Our Courses
+          </h2>
           <div className="mt-4 max-w-3xl mx-auto">
             <p className="text-lg text-neutral-dark/80">
-              Expand your knowledge of Vasthu Astrology with our specialized courses for all knowledge levels.
+              Expand your knowledge of Vasthu Astrology with our specialized
+              courses for all knowledge levels.
             </p>
           </div>
         </div>
@@ -92,7 +97,9 @@ export function CoursesSection() {
             >
               <div className="h-56 bg-gradient-to-br from-primary to-secondary relative">
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 className="text-2xl font-bold text-white px-6 text-center">{course.title}</h3>
+                  <h3 className="text-2xl font-bold text-white px-6 text-center">
+                    {course.title}
+                  </h3>
                 </div>
               </div>
               <div className="p-6 flex-grow">
@@ -114,11 +121,13 @@ export function CoursesSection() {
                 <p className="text-neutral-dark/80">{course.description}</p>
 
                 <div className="mt-4">
-                  <h4 className="font-medium text-neutral-dark">What you'll learn:</h4>
+                  <h4 className="font-medium text-neutral-dark">
+                    What you'll learn:
+                  </h4>
                   <ul className="mt-2 space-y-2 text-sm text-neutral-dark/70">
                     {course.learnings.map((learning, index) => (
                       <li key={index} className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-accent mt-1 mr-2" />
+                        <CheckCircle  className="h-4 w-4 text-blue-600 mt-1 mr-2" />
                         <span>{learning}</span>
                       </li>
                     ))}
@@ -129,18 +138,25 @@ export function CoursesSection() {
               <div className="p-6 bg-neutral-light/50 border-t border-neutral-light">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-2xl font-semibold text-primary">{course.price}</span>
+                    <span className="text-2xl font-semibold text-primary">
+                      {course.price}
+                    </span>
                     <span className="text-neutral-dark/60 ml-2">USD</span>
                   </div>
                   <Button
                     onClick={() => {
-                      form.setValue("courseInterest", course.id === 1 ? "foundations" : "advanced");
-                      const element = document.getElementById("course-inquiry-form");
+                      form.setValue(
+                        "courseInterest",
+                        course.id === 1 ? "foundations" : "advanced",
+                      );
+                      const element = document.getElementById(
+                        "course-inquiry-form",
+                      );
                       if (element) {
                         element.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
-                    className="bg-accent hover:bg-accent/90 text-white"
+                    className="bg-blue-600 hover:bg-blue-700 text-white"
                   >
                     Enroll Now
                   </Button>
@@ -151,13 +167,19 @@ export function CoursesSection() {
         </div>
 
         <div id="course-inquiry-form" className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold text-neutral-dark">Request Course Information</h3>
+          <h3 className="text-2xl font-semibold text-neutral-dark">
+            Request Course Information
+          </h3>
           <p className="mt-4 max-w-2xl mx-auto text-neutral-dark/70">
-            Interested in our courses? Fill out the form to receive detailed syllabus, upcoming dates, and special offers.
+            Interested in our courses? Fill out the form to receive detailed
+            syllabus, upcoming dates, and special offers.
           </p>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="mt-8 max-w-lg mx-auto">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="mt-8 max-w-lg mx-auto"
+            >
               <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                 <div className="sm:col-span-2">
                   <FormField
@@ -209,7 +231,10 @@ export function CoursesSection() {
                           </FormControl>
                           <SelectContent>
                             {COURSE_INTEREST_OPTIONS.map((option) => (
-                              <SelectItem key={option.value} value={option.value}>
+                              <SelectItem
+                                key={option.value}
+                                value={option.value}
+                              >
                                 {option.label}
                               </SelectItem>
                             ))}
@@ -235,7 +260,8 @@ export function CoursesSection() {
                         </FormControl>
                         <div className="space-y-1 leading-none text-left">
                           <FormLabel>
-                            I'd like to receive occasional newsletter emails with spiritual insights and offers.
+                            I'd like to receive occasional newsletter emails
+                            with spiritual insights and offers.
                           </FormLabel>
                         </div>
                       </FormItem>
@@ -244,12 +270,14 @@ export function CoursesSection() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full"
                     disabled={courseInquiryMutation.isPending}
                   >
-                    {courseInquiryMutation.isPending ? "Submitting..." : "Request Information"}
+                    {courseInquiryMutation.isPending
+                      ? "Submitting..."
+                      : "Request Information"}
                   </Button>
                 </div>
               </div>

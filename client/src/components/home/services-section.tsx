@@ -36,21 +36,29 @@ export function ServicesSection() {
     <section id="services" className="py-16 bg-primary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-accent font-medium tracking-widest uppercase text-sm">What We Offer</span>
-          <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">Our Services</h2>
+          <span className="text-accent font-medium tracking-widest uppercase text-sm">
+            What We Offer
+          </span>
+          <h2 className="mt-2 text-3xl font-bold text-neutral-dark sm:text-4xl">
+            Our Services
+          </h2>
           <div className="mt-4 max-w-3xl mx-auto">
             <p className="text-lg text-neutral-dark/80">
-              Professional consultations and personalized guidance to improve your space and life through Vasthu principles.
+              Professional consultations and personalized guidance to improve
+              your space and life through Vasthu principles.
             </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service) => (
-            <Card key={service.id} className="overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-              <div className="h-48 bg-gradient-to-r from-primary/20 to-secondary/20 relative">
+            <Card
+              key={service.id}
+              className="overflow-hidden transition-transform duration-300 hover:-translate-y-2"
+            >
+              <div className="h-48 bg-yellow-900">
                 <img
-                  className="w-full h-full object-cover mix-blend-overlay"
+                  className="w-full h-full object-cover"
                   src={service.imageUrl}
                   alt={service.title}
                 />
@@ -62,10 +70,16 @@ export function ServicesSection() {
                 </div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-neutral-dark">{service.title}</h3>
-                <p className="mt-3 text-neutral-dark/70">{service.description}</p>
+                <h3 className="text-xl font-bold text-neutral-dark">
+                  {service.title}
+                </h3>
+                <p className="mt-3 text-neutral-dark/70">
+                  {service.description}
+                </p>
                 <div className="mt-6">
-                  <span className="text-lg font-medium text-primary">{service.price}</span>
+                  <span className="text-lg font-medium text-primary">
+                    {service.price}
+                  </span>
                 </div>
                 <div className="mt-4 text-sm text-neutral-dark/60">
                   {service.features.map((feature, index) => (
@@ -78,7 +92,10 @@ export function ServicesSection() {
               </CardContent>
               <CardFooter className="pt-0 px-6 pb-6">
                 <Link href={`/booking?type=${service.type}`} className="w-full">
-                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
+                  <Button
+                    variant="outline"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                  >
                     Book Now
                   </Button>
                 </Link>
