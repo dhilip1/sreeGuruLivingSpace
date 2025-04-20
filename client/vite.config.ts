@@ -6,6 +6,7 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig(async () => {
   return {
+    root:"./client",
     plugins: [
       react(),
       runtimeErrorOverlay(),
@@ -23,7 +24,16 @@ export default defineConfig(async () => {
       },
     },
     server: {
+      port: 5173,
       hmr: true,
+      proxy: {
+        "/api": {
+          target: "http://localhost:8080", // or the correct backend port
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ""),
+        },
+      },
     },
+    
   };
 });

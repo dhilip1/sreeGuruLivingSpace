@@ -6,7 +6,7 @@ import {
   insertConsultationBookingSchema, 
   insertContactMessageSchema, 
   insertNewsletterSubscriptionSchema
-} from "../shared/schema";
+} from "./schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
 
