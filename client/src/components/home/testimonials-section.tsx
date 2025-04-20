@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { TESTIMONIALS } from "@/lib/constants";
+import { TESTIMONIALS } from "../../lib/constants";
 import { ChevronLeft, ChevronRight, Star, StarHalf, User } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { cn } from "../../lib/utils";
+import { Button } from "../../components/ui/button";
 
 export function TestimonialsSection() {
   const [position, setPosition] = useState(0);

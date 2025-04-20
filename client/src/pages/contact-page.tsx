@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { ContactSection } from "@/components/contact/contact-section";
+import { Navbar } from "../components/layout/navbar";
+import { Footer } from "../components/layout/footer";
+import { ContactSection } from "../components/contact/contact-section";
 import { Helmet } from "react-helmet";
-import { SITE_TITLE } from "@/lib/constants";
+import { SITE_TITLE } from "../lib/constants";
 
 export default function ContactPage() {
   useEffect(() => {

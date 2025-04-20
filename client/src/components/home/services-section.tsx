@@ -1,9 +1,9 @@
 import { Link } from "wouter";
-import { SERVICES } from "@/lib/constants";
-import { Button } from "@/components/ui/button";
+import { SERVICES } from "../../lib/constants";
+import { Button } from "../../components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardFooter } from "../../components/ui/card";
+import { Badge } from "../../components/ui/badge";
 
 export function ServicesSection() {
   const getTypeColor = (type: string) => {

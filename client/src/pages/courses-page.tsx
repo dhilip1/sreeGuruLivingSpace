@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { CoursesSection } from "@/components/home/courses-section";
+import { Navbar } from "../components/layout/navbar";
+import { Footer } from "../components/layout/footer";
+import { CoursesSection } from "../components/home/courses-section";
 import { Helmet } from "react-helmet-async";
-import { SITE_TITLE } from "@/lib/constants";
+import { SITE_TITLE } from "../lib/constants";
 
 export default function CoursesPage() {
   useEffect(() => {

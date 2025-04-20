@@ -1,4 +1,4 @@
-import { ABOUT_FEATURES } from "@/lib/constants";
+import { ABOUT_FEATURES } from "../../lib/constants";
 import { Star, Scale, Home, Sun } from "lucide-react";
 
 const getFeatureIcon = (iconName: string) => {

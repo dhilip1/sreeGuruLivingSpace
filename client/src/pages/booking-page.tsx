@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useLocation } from "wouter";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { BookingSection } from "@/components/booking/booking-section";
+import { Navbar } from "../components/layout/navbar";
+import { Footer } from "../components/layout/footer";
+import { BookingSection } from "../components/booking/booking-section";
 import { Helmet } from "react-helmet";
-import { SITE_TITLE } from "@/lib/constants";
+import { SITE_TITLE } from "../lib/constants";
 
 export default function BookingPage() {
   const [location] = useLocation();

@@ -3,10 +3,10 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { COURSES, COURSE_INTEREST_OPTIONS } from "@/lib/constants";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
+import { COURSES, COURSE_INTEREST_OPTIONS } from "../../lib/constants";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Checkbox } from "../../components/ui/checkbox";
 import { Calendar, Clock, Signal, CheckCircle } from "lucide-react";
 import {
   Select,
@@ -14,7 +14,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../components/ui/select";
 import {
   Form,
   FormControl,
@@ -22,9 +22,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
+} from "../../components/ui/form";
+import { apiRequest } from "../../lib/queryClient";
+import { useToast } from "../../hooks/use-toast";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters."),

@@ -1,6 +1,6 @@
 import { Link } from "wouter";
-import { SITE_DESCRIPTION } from "@/lib/constants";
-import { Button } from "@/components/ui/button";
+import { SITE_DESCRIPTION } from "../../lib/constants";
+import { Button } from "../../components/ui/button";
 
 export function HeroSection() {
   return (

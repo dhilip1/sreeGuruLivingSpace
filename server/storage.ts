@@ -2,7 +2,7 @@ import {
   users, services, courses, testimonials, courseInquiries, consultationBookings, contactMessages, newsletterSubscriptions,
   type User, type Service, type Course, type Testimonial, type CourseInquiry, type ConsultationBooking, type ContactMessage, type NewsletterSubscription,
   type InsertUser, type InsertService, type InsertCourse, type InsertTestimonial, type InsertCourseInquiry, type InsertConsultationBooking, type InsertContactMessage, type InsertNewsletterSubscription
-} from "@shared/schema";
+} from "../shared/schema";
 import { SERVICES, COURSES, TESTIMONIALS } from "../client/src/lib/constants";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
