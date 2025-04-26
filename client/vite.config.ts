@@ -1,7 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
+  root: "./client",  // 👈 Very Important
   plugins: [react()],
   server: {
     port: 5173,
@@ -14,7 +16,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": "/src",
+      "@": path.resolve(__dirname, "client/src"),  // 👈 Fix alias for @
     },
   },
 });
