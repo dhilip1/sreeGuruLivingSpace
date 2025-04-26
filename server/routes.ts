@@ -1,27 +1,11 @@
 import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { 
-  insertCourseInquirySchema, 
-  insertConsultationBookingSchema, 
-  insertContactMessageSchema, 
-  insertNewsletterSubscriptionSchema
-} from "../server/schema";
-import { ZodError } from "zod";
-import { fromZodError } from "zod-validation-error";
+
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // prefix all routes with /api
   
-  // Get all services
-  app.get("/api/services", async (_req: Request, res: Response) => {
-    try {
-      const services = await storage.getServices();
-      res.json(services);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch services" });
-    }
-  });
+
   
   // // Get a specific service
   // app.get("/api/services/:id", async (req: Request, res: Response) => {
@@ -42,15 +26,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   //   }
   // });
   
-  // Get all courses
-  app.get("/api/courses", async (_req: Request, res: Response) => {
-    try {
-      const courses = await storage.getCourses();
-      res.json(courses);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch courses" });
-    }
-  });
+ 
   
   // // Get a specific course
   // app.get("/api/courses/:id", async (req: Request, res: Response) => {
@@ -71,15 +47,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   //   }
   // });
   
-  // Get all testimonials
-  app.get("/api/testimonials", async (_req: Request, res: Response) => {
-    try {
-      const testimonials = await storage.getTestimonials();
-      res.json(testimonials);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch testimonials" });
-    }
-  });
+
   
   // // Create a course inquiry
   // app.post("/api/course-inquiry", async (req: Request, res: Response) => {
