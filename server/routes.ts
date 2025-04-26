@@ -2,7 +2,7 @@ import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 
 
-export async function registerRoutes(app: Express): Promise<Server> {
+// export async function registerRoutes(app: Express): Promise<Server> {
   // prefix all routes with /api
   
 
@@ -116,7 +116,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   //   }
   // });
 
-  const httpServer = createServer(app);
+//   const httpServer = createServer(app);
 
-  return httpServer;
-}
+//   return httpServer;
+// }
