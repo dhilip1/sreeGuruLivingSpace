@@ -26,13 +26,15 @@ export default defineConfig(async () => {
     server: {
       port: 5173,
       hmr: true,
-      proxy: {
-        "/api": {
-          target: "http://localhost:8080", // or the correct backend port
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ""),
-        },
-      },
+      proxy: process.env.NODE_ENV === 'development'
+      ? {
+          '/api': {
+            target: 'http://localhost:8080',
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/api/, ''),
+          },
+        }
+      : undefined,
     },
     
   };
