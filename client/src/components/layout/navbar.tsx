@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+import {Link,useLocation,useNavigate} from "react-router-dom";
 import { Menu, Moon } from "lucide-react";
 import { SITE_TITLE } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -20,13 +20,14 @@ const links = [
 ];
 
 export function Navbar() {
-  const [location] = useLocation();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const { scrollToHash } = useScrollToHash();
 
   const isActive = (path: string) => {
-    if (path === "/") return location === "/";
-    return location.includes(path.replace("/", ""));
+    if (path === "/") return location.pathname === "/";
+    return location.pathname.includes(path.replace("/", ""));
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -36,7 +37,7 @@ export function Navbar() {
     
     // Handle navigation based on the link type
     if (href === "/") {
-      window.location.href = "/";
+      navigate("/");
       return;
     }
     
@@ -46,7 +47,7 @@ export function Navbar() {
       console.log(`Scroll to section: ${sectionId}`);
       
       // If we're not on the home page, navigate to home page first
-      if (location !== "/") {
+      if (location.pathname !== "/") {
         // Set a session storage flag so we know to scroll after navigation
         sessionStorage.setItem("scrollToSection", sectionId);
         window.location.href = "/";
@@ -72,7 +73,7 @@ export function Navbar() {
   // Check for a stored section to scroll to on page load
   useEffect(() => {
     const sectionToScrollTo = sessionStorage.getItem("scrollToSection");
-    if (sectionToScrollTo && location === "/") {
+    if (sectionToScrollTo && location.pathname === "/") {
       // Small delay to ensure the page is fully loaded
       setTimeout(() => {
         scrollToHash(sectionToScrollTo);
@@ -86,7 +87,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href="/" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <span className="sr-only">{SITE_TITLE}</span>
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10">
                 <Moon className="text-primary text-2xl" />
@@ -125,7 +126,7 @@ export function Navbar() {
                       {link.name}
                     </a>
                   ))}
-                  <Link href="/booking">
+                  <Link to="/booking">
                     <Button className="w-full mt-4">Book Consultation</Button>
                   </Link>
                 </div>
@@ -152,7 +153,7 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Link href="/booking">
+            <Link to="/booking">
               <Button className="ml-8 whitespace-nowrap inline-flex items-center justify-center">
                 Book Consultation
               </Button>

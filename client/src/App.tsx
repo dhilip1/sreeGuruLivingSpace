@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Routes, Route } from "react-router-dom";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "./components/ui/toaster";
@@ -8,16 +8,18 @@ import BookingPage from "./pages/booking-page";
 import ContactPage from "./pages/contact-page";
 import CoursesPage from "./pages/courses-page";
 import NotFound from "./pages/not-found";
+import TodayPanchangam from "./pages/todayPanchangam-page";
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/booking" component={BookingPage} />
-      <Route path="/contact" component={ContactPage} />
-      <Route path="/courses" component={CoursesPage} />
-      <Route component={NotFound} />
-    </Switch>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/booking" element={<BookingPage/>} />
+      <Route path="/contact" element={<ContactPage/>} />
+      <Route path="/courses" element={<CoursesPage/>} />
+      <Route path="/today-panchangam" element={<TodayPanchangam />} />
+      <Route element={<NotFound />} />
+    </Routes>
   );
 }
 
