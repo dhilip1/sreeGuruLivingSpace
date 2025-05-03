@@ -10,6 +10,9 @@ import CoursesPage from "./pages/courses-page";
 import NotFound from "./pages/not-found";
 import TodayPanchangam from "./pages/todayPanchangam-page";
 import { LanguageProvider } from './contexts/LanguageContext';
+import { AuthProvider } from "@/contexts/AuthContext";
+import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
+import ProtectedPage from "./pages/protected-page";
 
 function Router() {
   return (
@@ -19,6 +22,11 @@ function Router() {
       <Route path="/contact" element={<ContactPage/>} />
       <Route path="/courses" element={<CoursesPage/>} />
       <Route path="/today-panchangam" element={<TodayPanchangam />} />
+      <Route path="/protected-page" element={
+        <ProtectedRoute>
+          <ProtectedPage />
+        </ProtectedRoute>
+      } />
       <Route element={<NotFound />} />
     </Routes>
   );
@@ -26,14 +34,16 @@ function Router() {
 
 function App() {
   return (
-    <LanguageProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </QueryClientProvider>
-    </LanguageProvider>
+    <AuthProvider>
+      <LanguageProvider>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </QueryClientProvider>
+      </LanguageProvider>
+    </AuthProvider>
   );
 }
 
