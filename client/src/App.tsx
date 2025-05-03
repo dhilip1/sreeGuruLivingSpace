@@ -9,6 +9,7 @@ import ContactPage from "./pages/contact-page";
 import CoursesPage from "./pages/courses-page";
 import NotFound from "./pages/not-found";
 import TodayPanchangam from "./pages/todayPanchangam-page";
+import { LanguageProvider } from './contexts/LanguageContext';
 
 function Router() {
   return (
@@ -25,12 +26,14 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <LanguageProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </LanguageProvider>
   );
 }
 

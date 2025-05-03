@@ -36,7 +36,7 @@ export const COURSES = [
     id: 1,
     title: "Unlock the Secrets of Living Space Science ( Vasthu) with Astrology",
     description: "This is not just a Vasthu class — it’s a deep-dive into the ancient Indian science of life energy surrounding us at home, combined with the wisdom of Astrology. Learn how your home’s design affects your life and how to identify and fix imbalances. Perfect for beginners seeking to understand this ancient wisdom & correct it by themselves as an expert",
-    price: "$299/INR 23,333",
+    price: "Rs.23,333 INR | $299",
     duration: "8 Weekends",
     hours: "12 Hours",
     level: "Beginner",

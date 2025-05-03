@@ -17,6 +17,7 @@ const links = [
   { name: "Courses", href: "#courses" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
+  { name: "TodayPanchangam", href: "/today-panchangam" },
 ];
 
 export function Navbar() {
@@ -50,7 +51,7 @@ export function Navbar() {
       if (location.pathname !== "/") {
         // Set a session storage flag so we know to scroll after navigation
         sessionStorage.setItem("scrollToSection", sectionId);
-        window.location.href = "/";
+        navigate("/");
         return;
       }
       
@@ -66,7 +67,7 @@ export function Navbar() {
       }
     } else {
       // Regular link, just navigate
-      window.location.href = href;
+      navigate(href);
     }
   };
   
@@ -150,15 +151,17 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-          </nav>
 
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+
             <Link to="/booking">
               <Button className="ml-8 whitespace-nowrap inline-flex items-center justify-center">
                 Book Consultation
               </Button>
             </Link>
-          </div>
+ 
+          </nav>
+
+
         </div>
       </div>
     </header>
